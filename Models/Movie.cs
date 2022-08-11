@@ -5,15 +5,23 @@ namespace CinemaApi.Models
 {
     public class Movie
     {
-       public int id {get; set;} 
-       [Required(ErrorMessage ="Name cannot be empty")]
-       public string? Name {get; set;}
-       [Required(ErrorMessage ="Language cannot be null or empty")]
-       public string? Language {get; set;}
-       [Required]
-       public double? Ratings { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Language { get; set; }
+        public string Duration { get; set; }
+        public DateTime PlayingDate { get; set; }
+        public DateTime PlayingTime { get; set; }
+        public double TicketPrice { get; set; }
+        public double Rating { get; set; }
+        public string Genre { get; set; }
+        public string TrailerUrl { get; set; }
+        public string ImageUrl { get; set; }
+
        [NotMapped]
        public IFormFile? Image { get; set; }
-       public string? ImageUrl { get; set; }
+
+       public ICollection<Reservation> Reservations { get; set; }
+       
     }
 }
