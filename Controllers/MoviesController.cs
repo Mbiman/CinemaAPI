@@ -22,9 +22,13 @@ namespace CinemaApi.Controllers
 
         [Authorize]
         [HttpGet("[action]")]
-        public IActionResult AllMovies()
+        public IActionResult AllMovies(string? sort, int? pageNumber, int? pageSize)
         {
-            var movies = from movie in _dbContext.Movies
+            var currentPageNumber = pageNumber ?? 1;
+            var currentPageSize = pageSize ?? 5;
+            try
+            {
+                var movies = from movie in _dbContext.Movies
                         select new
                         {
                             Id = movie.Id,
@@ -36,7 +40,35 @@ namespace CinemaApi.Controllers
                             ImageUrl = movie.ImageUrl
                         };
 
-            return Ok(movies);
+                switch (sort)
+                {
+                    case "desc":
+                        return Ok(movies.Skip((currentPageNumber - 1) * currentPageSize).Take(currentPageSize).OrderByDescending(m => m.Rating));
+                    case "asc":
+                        return Ok(movies.Skip((currentPageNumber - 1) * currentPageSize).Take(currentPageSize).OrderBy(m => m.Rating));
+                    default:
+                        return Ok(movies.Skip((currentPageNumber - 1) * currentPageSize).Take(currentPageSize));
+                }  
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+
+        [Authorize]
+        [HttpGet("[action]/{id}")]
+        public IActionResult MovieDetails(int id)
+        {
+            var movie = _dbContext.Movies.Find(id);
+            if (movie == null)
+            {
+                return NotFound("Movie is not available or does not exist");
+            }
+
+            return Ok(movie);
         }
 
 
