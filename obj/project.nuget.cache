@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f8wkcZ49eSI6iBawFdOiLRt8Od5cnPbkWVJpH1jMfeMMebWdmApZ/fiYiyoZoB06vl2yQqyxHCwQtToIyrL0ww==",
+  "dgSpecHash": "m9iJ+dKVjRsnTT7p/eLiZf/YJyJZW8BmiRLeHtxLoAIEbnR3/CTpLWBOVIk6opPZW0mWjpY/4ROJVugFskvb7Q==",
   "success": true,
   "projectFilePath": "/home/mbiman/Documents/repos/CinemaApi/CinemaApi.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,7 @@
     "/home/mbiman/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/microsoft.identity.client/4.21.1/microsoft.identity.client.4.21.1.nupkg.sha512",
     "/home/mbiman/.nuget/packages/microsoft.identitymodel.abstractions/6.22.0/microsoft.identitymodel.abstractions.6.22.0.nupkg.sha512",
-    "/home/mbiman/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.10.0/microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "/home/mbiman/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.22.0/microsoft.identitymodel.jsonwebtokens.6.22.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/microsoft.identitymodel.logging/6.22.0/microsoft.identitymodel.logging.6.22.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/microsoft.identitymodel.protocols/6.10.0/microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.10.0/microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
@@ -58,7 +58,7 @@
     "/home/mbiman/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
-    "/home/mbiman/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/home/mbiman/.nuget/packages/system.identitymodel.tokens.jwt/6.22.0/system.identitymodel.tokens.jwt.6.22.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/system.runtime.caching/4.7.0/system.runtime.caching.4.7.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/mbiman/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",

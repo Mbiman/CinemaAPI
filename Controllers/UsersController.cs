@@ -3,7 +3,10 @@ using CinemaApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using AuthenticationPlugin;
-
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CinemaApi.Controllers
 {
@@ -12,14 +15,11 @@ namespace CinemaApi.Controllers
     public class UsersController : ControllerBase
     {
         private CinemaDbContext _dbContext;
-        private IConfiguration _configuration;
-        private readonly AuthService _auth;
+       
 
-        public UsersController(CinemaDbContext dbContext, IConfiguration configuration)
+        public UsersController(CinemaDbContext dbContext, IConfiguration config)
         {
             _dbContext = dbContext;
-            _configuration = configuration;
-            _auth = new AuthService(_configuration);
         }
 
 
@@ -34,6 +34,7 @@ namespace CinemaApi.Controllers
            var userObj = new User
            {
                 Name = user.Name,
+                Username = user.Username,
                 Email = user.Email,
                 Password = SecurePasswordHasherHelper.Hash(user.Password),
                 Role = "Users"
@@ -43,7 +44,7 @@ namespace CinemaApi.Controllers
           
            return StatusCode(StatusCodes.Status201Created);
         }
-
-        
+   
+   
     }
 }

@@ -11,7 +11,7 @@ namespace CinemaApi.Models
 
         public double Price { get; set; }
 
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         public DateTime ReservationTime { get; set; }
 
