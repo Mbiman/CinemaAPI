@@ -72,6 +72,23 @@ namespace CinemaApi.Controllers
         }
 
 
+        [Authorize]
+        [HttpGet("[action]")]
+        //  api/movies/findmovies?moviename=(name of movie)
+        public IActionResult FindMovies(string movieName)
+        {
+            var movies = from movie in _dbContext.Movies
+                        where movie.Name!.StartsWith(movieName)
+                        select new
+                        {
+                            Id = movie.Id,
+                            Name = movie.Name,
+                            ImageUrl = movie.ImageUrl
+                        };
+            return Ok(movies);
+        }
+
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Post([FromForm] Movie movieObj)
